@@ -8,30 +8,37 @@
   <name>rest-template Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <jersey.version>2.14</jersey.version>
-    <jackson.version>2.4.4</jackson.version>
+    <v.compiler>3.6.1</v.compiler>
+    <v.war>3.1.0</v.war>
+    <v.junit>4.12</v.junit>
+    <v.testng>6.11</v.testng>
+    <v.restassured>3.0.3</v.restassured>
+    <v.selenium>3.4.0</v.selenium>
+    <v.jersey>2.14</v.jersey>
+    <v.jackson>2.4.4</v.jackson>
+    <v.jsonsimple>1.1.1</v.jsonsimple>
   </properties>
  <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${v.junit}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-server</artifactId>
-      <version>${jersey.version}</version>
+      <version>${v.jersey}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet-core</artifactId>
-      <version>${jersey.version}</version>
+      <version>${v.jersey}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet</artifactId>
-      <version>${jersey.version}</version>
+      <version>${v.jersey}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
@@ -42,69 +49,58 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.jaxrs</groupId>
       <artifactId>jackson-jaxrs-json-provider</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.module</groupId>
       <artifactId>jackson-module-jaxb-annotations</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-xml</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.jaxrs</groupId>
       <artifactId>jackson-jaxrs-xml-provider</artifactId>
-      <version>${jackson.version}</version>
+      <version>${v.jackson}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.media</groupId>
       <artifactId>jersey-media-json-jackson</artifactId>
-      <version>${jersey.version}</version>
+      <version>${v.jersey}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.media</groupId>
       <artifactId>jersey-media-multipart</artifactId>
-      <version>${jersey.version}</version>
+      <version>${v.jersey}</version>
     </dependency>
     <dependency>
-      <groupId>com.googlecode.json-simple</groupId>
-      <artifactId>json-simple</artifactId>
-      <version>1.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.jayway.restassured</groupId>
+      <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
-      <version>2.3.1</version>
+      <version>${v.restassured}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>2.42.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.1.1</version>
-      <scope>test</scope>
+      <version>${v.selenium}</version>
     </dependency>
   </dependencies>
   <build>
@@ -112,15 +108,15 @@
     <plugins>
       <plugin>
 	<artifactId>maven-compiler-plugin</artifactId>
-	<version>3.1</version>
+	<version>${v.compiler}</version>
 	<configuration>
-	  <source>1.7</source>
-	  <target>1.7</target>
+	  <source>1.8</source>
+	  <target>1.8</target>
 	</configuration>
       </plugin>
       <plugin>
 	<artifactId>maven-war-plugin</artifactId>
-	<version>2.3</version>
+	<version>${v.war}</version>
 	<configuration>
 	  <failOnMissingWebXml>false</failOnMissingWebXml>
 	</configuration>
